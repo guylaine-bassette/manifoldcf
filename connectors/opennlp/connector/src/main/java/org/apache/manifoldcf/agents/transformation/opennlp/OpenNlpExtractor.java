@@ -44,6 +44,7 @@ import org.apache.manifoldcf.agents.interfaces.ServiceInterruption;
 import org.apache.manifoldcf.agents.system.Logging;
 import org.apache.manifoldcf.agents.system.ManifoldCF;
 import org.apache.manifoldcf.agents.transformation.BaseTransformationConnector;
+import org.apache.manifoldcf.connectorcommon.common.storage.DestinationStorage;
 import org.apache.manifoldcf.core.interfaces.IHTTPOutput;
 import org.apache.manifoldcf.core.interfaces.IPostParameters;
 import org.apache.manifoldcf.core.interfaces.ManifoldCFException;
@@ -69,10 +70,7 @@ public class OpenNlpExtractor extends BaseTransformationConnector {
 
   protected final File fileDirectory = ManifoldCF.getFileProperty(ManifoldCF.fileResourcesProperty);
 
-  /** We handle up to 64K in memory; after that we go to disk. */
-  protected static final long inMemoryMaximumFile = 65536;
 
-  
   /**
    * Return a list of activities that this connector generates. The connector
    * does NOT need to be connected before this method is called.
@@ -159,13 +157,8 @@ public class OpenNlpExtractor extends BaseTransformationConnector {
     // We can do this at the same time we're extracting, if we're clever.
       
     // Set up to spool back the original content, using either memory or disk, whichever makes sense.
-    DestinationStorage ds;
-    if (document.getBinaryLength() <= inMemoryMaximumFile) {
-      ds = new MemoryDestinationStorage((int)document.getBinaryLength());
-    } else {
-      ds = new FileDestinationStorage();
-    }
-    
+    DestinationStorage ds = DestinationStorage.getDestinationStorage(document.getBinaryLength(), getClass());
+
     try {
 
       // For logging, we'll need all of this
@@ -649,141 +642,6 @@ public class OpenNlpExtractor extends BaseTransformationConnector {
     
   }
   
-  protected static interface DestinationStorage {
-    /** Get the output stream to write to.  Caller should explicitly close this stream when done writing.
-    */
-    public OutputStream getOutputStream()
-      throws ManifoldCFException;
-    
-    /** Get new binary length.
-    */
-    public long getBinaryLength()
-      throws ManifoldCFException;
-
-    /** Get the input stream to read from.  Caller should explicitly close this stream when done reading.
-    */
-    public InputStream getInputStream()
-      throws ManifoldCFException;
-    
-    /** Close the object and clean up everything.
-    * This should be called when the data is no longer needed.
-    */
-    public void close()
-      throws ManifoldCFException;
-  }
-  
-  protected static class FileDestinationStorage implements DestinationStorage {
-    protected final File outputFile;
-    protected final OutputStream outputStream;
-
-    public FileDestinationStorage()
-      throws ManifoldCFException
-    {
-      File outputFile;
-      OutputStream outputStream;
-      try
-      {
-        outputFile = File.createTempFile("mcftika","tmp");
-        outputStream = new FileOutputStream(outputFile);
-      }
-      catch (IOException e)
-      {
-        handleIOException(e);
-        outputFile = null;
-        outputStream = null;
-      }
-      this.outputFile = outputFile;
-      this.outputStream = outputStream;
-    }
-    
-    @Override
-    public OutputStream getOutputStream()
-      throws ManifoldCFException
-    {
-      return outputStream;
-    }
-    
-    /** Get new binary length.
-    */
-    @Override
-    public long getBinaryLength()
-      throws ManifoldCFException
-    {
-      return outputFile.length();
-    }
-
-    /** Get the input stream to read from.  Caller should explicitly close this stream when done reading.
-    */
-    @Override
-    public InputStream getInputStream()
-      throws ManifoldCFException
-    {
-      try
-      {
-        return new FileInputStream(outputFile);
-      }
-      catch (IOException e)
-      {
-        handleIOException(e);
-        return null;
-      }
-    }
-    
-    /** Close the object and clean up everything.
-    * This should be called when the data is no longer needed.
-    */
-    @Override
-    public void close()
-      throws ManifoldCFException
-    {
-      outputFile.delete();
-    }
-
-  }
-  
-  protected static class MemoryDestinationStorage implements DestinationStorage {
-    protected final ByteArrayOutputStream outputStream;
-    
-    public MemoryDestinationStorage(int sizeHint)
-    {
-      outputStream = new ByteArrayOutputStream(sizeHint);
-    }
-    
-    @Override
-    public OutputStream getOutputStream()
-      throws ManifoldCFException
-    {
-      return outputStream;
-    }
-
-    /** Get new binary length.
-    */
-    @Override
-    public long getBinaryLength()
-      throws ManifoldCFException
-    {
-      return outputStream.size();
-    }
-    
-    /** Get the input stream to read from.  Caller should explicitly close this stream when done reading.
-    */
-    @Override
-    public InputStream getInputStream()
-      throws ManifoldCFException
-    {
-      return new ByteArrayInputStream(outputStream.toByteArray());
-    }
-    
-    /** Close the object and clean up everything.
-    * This should be called when the data is no longer needed.
-    */
-    public void close()
-      throws ManifoldCFException
-    {
-    }
-
-  }
-
   protected static class SpecPacker {
 
     private final String sModelPath;
