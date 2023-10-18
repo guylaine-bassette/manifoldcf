@@ -340,26 +340,26 @@
 
     <target name="preclean-registry">
         <mkdir dir="dist"/>
-        <delete file="dist/connectors.xml"/>
-        <delete file="dist/connectors-proprietary.xml"/>
+        <delete file="dist/apache-manifoldcf-2.27/connectors.xml"/>
+        <delete file="dist/apache-manifoldcf-2.27/connectors-proprietary.xml"/>
     </target>
 
     <target name="preclean-for-delivery">
         <mkdir dir="dist"/>
-        <mkdir dir="dist/example"/>
-        <mkdir dir="dist/example-proprietary"/>
-        <mkdir dir="dist/multiprocess-file-example"/>
-        <mkdir dir="dist/multiprocess-zk-example"/>
-        <mkdir dir="dist/multiprocess-file-example-proprietary"/>
-        <mkdir dir="dist/multiprocess-zk-example-proprietary"/>
-        <delete file="dist/example/properties.xml"/>
-        <delete file="dist/example-proprietary/properties.xml"/>
-        <delete file="dist/multiprocess-file-example/properties.xml"/>
-        <delete file="dist/multiprocess-file-example-proprietary/properties.xml"/>
-        <delete file="dist/multiprocess-zk-example/properties.xml"/>
-        <delete file="dist/multiprocess-zk-example-proprietary/properties.xml"/>
-        <delete file="dist/NOTICE.txt"/>
-        <delete file="dist/LICENSE.txt"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/example"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/example-proprietary"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/multiprocess-file-example"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/multiprocess-zk-example"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/multiprocess-file-example-proprietary"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/multiprocess-zk-example-proprietary"/>
+        <delete file="dist/apache-manifoldcf-2.27/example/properties.xml"/>
+        <delete file="dist/apache-manifoldcf-2.27/example-proprietary/properties.xml"/>
+        <delete file="dist/apache-manifoldcf-2.27/multiprocess-file-example/properties.xml"/>
+        <delete file="dist/apache-manifoldcf-2.27/multiprocess-file-example-proprietary/properties.xml"/>
+        <delete file="dist/apache-manifoldcf-2.27/multiprocess-zk-example/properties.xml"/>
+        <delete file="dist/apache-manifoldcf-2.27/multiprocess-zk-example-proprietary/properties.xml"/>
+        <delete file="dist/apache-manifoldcf-2.27/NOTICE.txt"/>
+        <delete file="dist/apache-manifoldcf-2.27/LICENSE.txt"/>
     </target>
     
     <target name="deliver-framework" depends="preclean-for-delivery,build-framework" if="downloaded">
@@ -369,59 +369,59 @@
                 <include name="connector-build.xml"/>
             </fileset>
         </copy>
-        <mkdir dir="dist/web"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/web"/>
         <copy todir="dist/web">
             <fileset dir="framework/dist/web"/>
         </copy>
-        <mkdir dir="dist/web-proprietary"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/web-proprietary"/>
         <copy todir="dist/web-proprietary">
             <fileset dir="framework/dist/web-proprietary"/>
         </copy>
-        <mkdir dir="dist/lib"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/lib"/>
         <copy todir="dist/lib">
             <fileset dir="framework/dist/lib"/>
         </copy>
-        <mkdir dir="dist/test-lib"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/test-lib"/>
         <copy todir="dist/test-lib">
             <fileset dir="framework/dist/test-lib"/>
         </copy>
-        <mkdir dir="dist/lib-proprietary"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/lib-proprietary"/>
         <copy todir="dist/lib-proprietary">
             <fileset dir="framework/dist/lib-proprietary"/>
         </copy>
-        <mkdir dir="dist/file-resources"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/file-resources"/>
         <copy todir="dist/file-resources">
             <fileset dir="framework/dist/file-resources"/>
         </copy>
-        <mkdir dir="dist/multiprocess-file-example"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/multiprocess-file-example"/>
         <copy todir="dist/multiprocess-file-example">
             <fileset dir="framework/dist/multiprocess-file-example"/>
         </copy>
-        <mkdir dir="dist/multiprocess-file-example-proprietary"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/multiprocess-file-example-proprietary"/>
         <copy todir="dist/multiprocess-file-example-proprietary">
             <fileset dir="framework/dist/multiprocess-file-example-proprietary"/>
         </copy>
-        <mkdir dir="dist/multiprocess-zk-example"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/multiprocess-zk-example"/>
         <copy todir="dist/multiprocess-zk-example">
             <fileset dir="framework/dist/multiprocess-zk-example"/>
         </copy>
-        <mkdir dir="dist/multiprocess-zk-example-proprietary"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/multiprocess-zk-example-proprietary"/>
         <copy todir="dist/multiprocess-zk-example-proprietary">
             <fileset dir="framework/dist/multiprocess-zk-example-proprietary"/>
         </copy>
-        <mkdir dir="dist/example"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/example"/>
         <copy todir="dist/example">
             <fileset dir="framework/dist/example"/>
         </copy>
-        <mkdir dir="dist/example-proprietary"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/example-proprietary"/>
         <copy todir="dist/example-proprietary">
             <fileset dir="framework/dist/example-proprietary"/>
         </copy>
-        <mkdir dir="dist/script-engine"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/script-engine"/>
         <copy todir="dist/script-engine">
             <fileset dir="framework/dist/script-engine"/>
         </copy>
-        <mkdir dir="dist/obfuscation-utility"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/obfuscation-utility"/>
         <copy todir="dist/obfuscation-utility">
             <fileset dir="framework/dist/obfuscation-utility"/>
         </copy>
@@ -432,25 +432,25 @@
                 <include name="connectors-proprietary.xml"/>
             </fileset>
         </copy>
-        <mkdir dir="dist/connector-lib"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/connector-lib"/>
         <copy todir="dist/connector-lib">
             <fileset dir="framework/dist/connector-lib"/>
         </copy>
-        <mkdir dir="dist/connector-common-lib"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/connector-common-lib"/>
         <copy todir="dist/connector-common-lib">
             <fileset dir="framework/dist/connector-common-lib"/>
         </copy>
-        <mkdir dir="dist/connector-lib-proprietary"/>
+        <mkdir dir="dist/apache-manifoldcf-2.27/connector-lib-proprietary"/>
         <copy todir="dist/connector-lib-proprietary">
             <fileset dir="framework/dist/connector-lib-proprietary"/>
         </copy>
-        <chmod dir="dist/script-engine" perm="a+x" includes="**/*.sh"/>
-        <chmod dir="dist/example" perm="a+x" includes="**/*.sh"/>
-        <chmod dir="dist/example-proprietary" perm="a+x" includes="**/*.sh"/>
-        <chmod dir="dist/multiprocess-file-example" perm="a+x" includes="**/*.sh"/>
-        <chmod dir="dist/multiprocess-file-example-proprietary" perm="a+x" includes="**/*.sh"/>
-        <chmod dir="dist/multiprocess-zk-example" perm="a+x" includes="**/*.sh"/>
-        <chmod dir="dist/multiprocess-zk-example-proprietary" perm="a+x" includes="**/*.sh"/>
+        <chmod dir="dist/apache-manifoldcf-2.27/script-engine" perm="a+x" includes="**/*.sh"/>
+        <chmod dir="dist/apache-manifoldcf-2.27/example" perm="a+x" includes="**/*.sh"/>
+        <chmod dir="dist/apache-manifoldcf-2.27/example-proprietary" perm="a+x" includes="**/*.sh"/>
+        <chmod dir="dist/apache-manifoldcf-2.27/multiprocess-file-example" perm="a+x" includes="**/*.sh"/>
+        <chmod dir="dist/apache-manifoldcf-2.27/multiprocess-file-example-proprietary" perm="a+x" includes="**/*.sh"/>
+        <chmod dir="dist/apache-manifoldcf-2.27/multiprocess-zk-example" perm="a+x" includes="**/*.sh"/>
+        <chmod dir="dist/apache-manifoldcf-2.27/multiprocess-zk-example-proprietary" perm="a+x" includes="**/*.sh"/>
         <copy todir="dist">
             <fileset dir="dist-license" includes="*.txt"/>
         </copy>
@@ -879,9 +879,9 @@ Use Apache Forrest version forrest-0.9-dev or higher.
     </target>
 
     <target name="run-script-interpreter" depends="deliver-framework">
-        <java classname="org.apache.manifoldcf.scriptengine.ScriptParser" fork="true" dir="dist/script-engine" maxmemory="128M">
+        <java classname="org.apache.manifoldcf.scriptengine.ScriptParser" fork="true" dir="dist/apache-manifoldcf-2.27/script-engine" maxmemory="128M">
           <classpath>
-            <fileset dir="dist/script-engine/lib">
+            <fileset dir="dist/apache-manifoldcf-2.27/script-engine/lib">
               <include name="*.jar"/>
             </fileset>
           </classpath>
@@ -3376,19 +3376,19 @@ Use Apache Forrest version forrest-0.9-dev or higher.
                 <fileset dir="lib">
                     <include name="less4j*.jar"/>
                 </fileset>
-                <fileset dir="dist/lib">
+                <fileset dir="dist/apache-manifoldcf-2.27/lib">
                     <include name="**/*.jar"/>
                 </fileset>
-                <fileset dir="dist/connector-common-lib">
+                <fileset dir="dist/apache-manifoldcf-2.27/connector-common-lib">
                     <include name="**/*.jar"/>
                 </fileset>
-                <fileset dir="dist/connector-lib">
+                <fileset dir="dist/apache-manifoldcf-2.27/connector-lib">
                     <include name="**/*.jar"/>
                 </fileset>
-                <fileset dir="dist/connector-lib-proprietary">
+                <fileset dir="dist/apache-manifoldcf-2.27/connector-lib-proprietary">
                     <include name="**/*.jar"/>
                 </fileset>
-                <fileset dir="dist/test-lib">
+                <fileset dir="dist/apache-manifoldcf-2.27/test-lib">
                     <include name="**/*.jar"/>
                 </fileset>
             </classpath>
