@@ -133,6 +133,9 @@ public class ManifoldCFInstance
       if (status == null)
         throw new ManifoldCFException("No such job: '"+jobID+"'");
       int statusValue = status.getStatus();
+      if (statusValue != JobStatus.JOBSTATUS_RUNNING){
+        System.out.println("-------------------- Job " + jobID + " Status = " + statusValue + " ------------------------------------------------------");
+      }
       switch (statusValue)
       {
         case JobStatus.JOBSTATUS_NOTYETRUN:

@@ -37,6 +37,7 @@ public class NavigationHSQLDBUI extends BaseUIHSQLDB
   public void createConnectionsAndJob()
     throws Exception
   {
+//    System.setProperty("webdriver.chrome.driver", "/home/guylaine/Documents/chromedriver");
     testerInstance.start(SeleniumTester.BrowserType.CHROME, "en-US", "http://localhost:8346/mcf-crawler-ui/index.jsp");
 
     //Login
