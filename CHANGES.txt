@@ -1,6 +1,12 @@
 ManifoldCF Change Log
 
-======================= 2.27-dev =====================
+======================= 2.28-dev =========================
+
+CONNECTORS-1765: Fixing vulnerabilities in MCF
+(Guylaine Bassett)
+
+
+======================= Release 2.27 =====================
 
 CONNECTORS-1755: Copyright footer must be updated
 (Piergiorgio Lucidi)
