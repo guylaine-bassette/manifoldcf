@@ -8,6 +8,9 @@ CONNECTORS-1765: Fixing vulnerabilities in MCF
 CONNECTORS-1763: Update the default PostgreSQL JDBC Driver
 (Piergiorgio Lucidi)
 
+CONNECTORS-1766: Fix JDBC authority edition error on "Database type" tab
+(Guylaine Bassett)
+
 ======================= Release 2.27 =====================
 
 CONNECTORS-1755: Copyright footer must be updated
