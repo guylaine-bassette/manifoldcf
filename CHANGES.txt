@@ -5,6 +5,8 @@ ManifoldCF Change Log
 CONNECTORS-1765: Fixing vulnerabilities in MCF
 (Guylaine Bassett)
 
+CONNECTORS-1763: Update the default PostgreSQL JDBC Driver
+(Piergiorgio Lucidi)
 
 ======================= Release 2.27 =====================
 
