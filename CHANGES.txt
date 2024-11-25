@@ -14,6 +14,9 @@ CONNECTORS-1766: Fix JDBC authority edition error on "Database type" tab
 CONNECTORS-1764: Error publishing Maven artifacts due to the Maven Source Plugin change
 (Piergiorgio Lucidi)
 
+CONNECTORS-1752: Solr 9 Ingester connector
+(Guylaine Bassett)
+
 ======================= Release 2.27 =====================
 
 CONNECTORS-1755: Copyright footer must be updated
