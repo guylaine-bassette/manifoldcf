@@ -17,6 +17,9 @@ CONNECTORS-1764: Error publishing Maven artifacts due to the Maven Source Plugin
 CONNECTORS-1752: Solr 9 Ingester connector
 (Guylaine Bassett)
 
+CONNECTORS-1762: Web Connector: Fix SSL issues in redirections
+(Soggard)
+
 ======================= Release 2.27 =====================
 
 CONNECTORS-1755: Copyright footer must be updated
