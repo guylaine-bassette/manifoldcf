@@ -20,6 +20,9 @@ CONNECTORS-1752: Solr 9 Ingester connector
 CONNECTORS-1762: Web Connector: Fix SSL issues in redirections
 (Soggard)
 
+CONNECTORS-1748: Add "User-Agent platform" option for crawling mobile websites
+(Mingchun Zhao)
+
 ======================= Release 2.27 =====================
 
 CONNECTORS-1755: Copyright footer must be updated
