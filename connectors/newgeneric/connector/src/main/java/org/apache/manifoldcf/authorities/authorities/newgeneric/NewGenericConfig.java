@@ -6,7 +6,7 @@ public class NewGenericConfig {
   public static final String PARAM_ADDRESS = "newGenericAddress";
   public static final String PARAM_CONNECTIONTIMEOUT = "connectionTimeout";
   public static final String PARAM_SOCKETTIMEOUT = "socketTimeout";
-  public static final String ADDRESS_DEFAULT = "http://datafari.com";
+  public static final String ADDRESS_DEFAULT = "http://your.json.service.com";
   public static final String CONNECTIONTIMEOUT_DEFAULT = "60000";
   public static final String SOCKETTIMEOUT_DEFAULT = "180000";
   public static final String PARAM_LOGIN = "login";

@@ -26,6 +26,9 @@ CONNECTORS-1748: Add "User-Agent platform" option for crawling mobile websites
 CONNECTORS-1758: Google drive api upgrade
 (Douglas C. R. Paes)
 
+CONNECTORS-1759: A new generic authority connector for JSON data exchange format
+(Guylaine Bassett)
+
 ======================= Release 2.27 =====================
 
 CONNECTORS-1755: Copyright footer must be updated
