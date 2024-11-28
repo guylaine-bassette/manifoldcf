@@ -23,6 +23,9 @@ CONNECTORS-1762: Web Connector: Fix SSL issues in redirections
 CONNECTORS-1748: Add "User-Agent platform" option for crawling mobile websites
 (Mingchun Zhao)
 
+CONNECTORS-1758: Google drive api upgrade
+(Douglas C. R. Paes)
+
 ======================= Release 2.27 =====================
 
 CONNECTORS-1755: Copyright footer must be updated
