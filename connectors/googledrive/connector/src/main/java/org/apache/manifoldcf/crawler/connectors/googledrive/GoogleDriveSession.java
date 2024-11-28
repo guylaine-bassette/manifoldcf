@@ -105,13 +105,10 @@ public class GoogleDriveSession {
     request = drive.files().list().setQ(googleDriveQuery);
     request.setIncludeTeamDriveItems(true);
     request.setSupportsTeamDrives(true);
-    request.setSupportsAllDrives(true);
-    
-    request.setFields("*");
 
     do {
       FileList files = request.execute();
-      for (File f : files.getFiles()) {
+      for (File f : files.getItems()) {
         idBuffer.add(f.getId());
       }
       request.setPageToken(files.getNextPageToken());
@@ -124,11 +121,8 @@ public class GoogleDriveSession {
   public File getObject(String id) throws IOException {
     Get get = drive.files().get(id);
     get.setSupportsTeamDrives(true);
-    get.setSupportsAllDrives(true);
-    get.setFields("*");
 	  
     File file = get.execute();
-    
     return file;
   }
 
@@ -139,13 +133,10 @@ public class GoogleDriveSession {
     Drive.Files.List request = drive.files().list().setQ("'" + nodeId + "' in parents");
     request.setIncludeTeamDriveItems(true);
     request.setSupportsTeamDrives(true);
-    request.setSupportsAllDrives(true);
-    
-    request.setFields("*");
 
     do {
       FileList files = request.execute();
-      for (File f : files.getFiles()) {
+      for (File f : files.getItems()) {
         idBuffer.add(f.getId());
       }
       request.setPageToken(files.getNextPageToken());
