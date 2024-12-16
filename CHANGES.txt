@@ -29,6 +29,12 @@ CONNECTORS-1758: Google drive api upgrade
 CONNECTORS-1759: A new generic authority connector for JSON data exchange format
 (Guylaine Bassett)
 
+CONNECTORS-1105: Add maven delivery targets to poms
+(Karl Wright, Markus Schuch, Maurizio Pillitu, Piergiorgio Lucidi)
+
+CONNECTORS-1767: Update the documentation adding the New Generic Authority Connector
+(Piergiorgio Lucidi, Guylaine Bassett)
+
 ======================= Release 2.27 =====================
 
 CONNECTORS-1755: Copyright footer must be updated
