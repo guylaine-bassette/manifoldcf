@@ -35,6 +35,9 @@ CONNECTORS-1105: Add maven delivery targets to poms
 CONNECTORS-1767: Update the documentation adding the New Generic Authority Connector
 (Piergiorgio Lucidi, Guylaine Bassett)
 
+CONNECTORS-1768: Wrong branch version tag generated in GitHub Workflow
+(Piergiorgio Lucidi)
+
 ======================= Release 2.27 =====================
 
 CONNECTORS-1755: Copyright footer must be updated
