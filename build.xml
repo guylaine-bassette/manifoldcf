@@ -2201,7 +2201,7 @@ Use Apache Forrest version forrest-0.9-dev or higher.
         <antcall target="download-via-maven">
             <param name="target" value="lib"/>
             <param name="project-path" value="org/apache/kafka"/>
-            <param name="artifact-version" value="3.6.0"/>
+            <param name="artifact-version" value="3.6.2"/>
             <param name="artifact-name" value="kafka-clients"/>
             <param name="artifact-type" value="jar"/>
         </antcall>

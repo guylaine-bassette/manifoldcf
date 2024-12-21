@@ -4,3 +4,6 @@
 /build/
 /target/
 */target/
+/test-HSQLDB-output/
+/test-HSQLDBext-output/
+/test-output/
