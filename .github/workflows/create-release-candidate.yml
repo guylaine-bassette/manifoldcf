@@ -141,14 +141,14 @@ jobs:
       
       - name: Rename KEYS and CHANGES.txt artifacts
         run: | 
-          cp KEYS apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}.KEYS
-          cp CHANGES.txt apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}.CHANGES.txt
+          cp KEYS apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}.KEYS
+          cp CHANGES.txt apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}.CHANGES.txt
       
       - name: Upload artifacts - KEYS - text format
         uses: actions/upload-artifact@v4.4.3
         with:
-          name: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}.KEYS
-          path: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}.KEYS
+          name: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}.KEYS
+          path: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}.KEYS
       
       - name: Upload Release Candidate Asset - KEYS
         uses: actions/upload-release-asset@v1.0.2
@@ -156,15 +156,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release_candidate.outputs.upload_url }}
-          asset_path: ./apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}.KEYS
-          asset_name: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}.KEYS
+          asset_path: ./apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}.KEYS
+          asset_name: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}.KEYS
           asset_content_type: text/plain
       
       - name: Upload artifacts - CHANGES
         uses: actions/upload-artifact@v4.4.3
         with:
-          name: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}.CHANGES.txt
-          path: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}.CHANGES.txt
+          name: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}.CHANGES.txt
+          path: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}.CHANGES.txt
       
       - name: Upload Release Candidate Asset - CHANGES
         uses: actions/upload-release-asset@v1.0.2
@@ -172,15 +172,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release_candidate.outputs.upload_url }}
-          asset_path: ./apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}.CHANGES.txt
-          asset_name: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}.CHANGES.txt
+          asset_path: ./apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}.CHANGES.txt
+          asset_name: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}.CHANGES.txt
           asset_content_type: text/plain
       
       - name: Upload artifacts - Binary - zip format
         uses: actions/upload-artifact@v4.4.3
         with:
-          name: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-bin.zip
-          path: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-bin.zip
+          name: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-bin.zip
+          path: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-bin.zip
       
       - name: Upload Release Candidate Asset - Binary - zip format
         uses: actions/upload-release-asset@v1.0.2
@@ -188,15 +188,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release_candidate.outputs.upload_url }}
-          asset_path: ./apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-bin.zip
-          asset_name: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-bin.zip
+          asset_path: ./apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-bin.zip
+          asset_name: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-bin.zip
           asset_content_type: application/zip
       
       - name: Upload artifacts - Binary - tar.gz format
         uses: actions/upload-artifact@v4.4.3
         with:
-          name: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-bin.tar.gz
-          path: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-bin.tar.gz
+          name: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-bin.tar.gz
+          path: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-bin.tar.gz
       
       - name: Upload Release Candidate Asset - Binary - tar.gz format
         uses: actions/upload-release-asset@v1.0.2
@@ -204,15 +204,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release_candidate.outputs.upload_url }}
-          asset_path: ./apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-bin.tar.gz
-          asset_name: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-bin.tar.gz
+          asset_path: ./apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-bin.tar.gz
+          asset_name: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-bin.tar.gz
           asset_content_type: application/gzip
       
       - name: Upload artifacts - Lib - tar.gz format
         uses: actions/upload-artifact@v4.4.3
         with:
-          name: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-lib.tar.gz
-          path: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-lib.tar.gz
+          name: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-lib.tar.gz
+          path: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-lib.tar.gz
       
       - name: Upload Release Candidate Asset - Lib - tar.gz format
         uses: actions/upload-release-asset@v1.0.2
@@ -220,15 +220,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release_candidate.outputs.upload_url }}
-          asset_path: ./apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-lib.tar.gz
-          asset_name: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-lib.tar.gz
+          asset_path: ./apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-lib.tar.gz
+          asset_name: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-lib.tar.gz
           asset_content_type: application/gzip
       
       - name: Upload artifacts - Lib - zip format
         uses: actions/upload-artifact@v4.4.3
         with:
-          name: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-lib.zip
-          path: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-lib.zip
+          name: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-lib.zip
+          path: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-lib.zip
       
       - name: Upload Release Candidate Asset - Lib - zip format
         uses: actions/upload-release-asset@v1.0.2
@@ -236,15 +236,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release_candidate.outputs.upload_url }}
-          asset_path: ./apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-lib.zip
-          asset_name: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-lib.zip
+          asset_path: ./apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-lib.zip
+          asset_name: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-lib.zip
           asset_content_type: application/zip
       
       - name: Upload artifacts - Source code - tar.gz format
         uses: actions/upload-artifact@v4.4.3
         with:
-          name: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-src.tar.gz
-          path: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-src.tar.gz
+          name: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-src.tar.gz
+          path: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-src.tar.gz
       
       - name: Upload Release Candidate Asset - Source code - tar.gz format
         uses: actions/upload-release-asset@v1.0.2
@@ -252,15 +252,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release_candidate.outputs.upload_url }}
-          asset_path: ./apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-src.tar.gz
-          asset_name: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-src.tar.gz
+          asset_path: ./apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-src.tar.gz
+          asset_name: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-src.tar.gz
           asset_content_type: application/gzip
       
       - name: Upload artifacts - Source code - zip format
         uses: actions/upload-artifact@v4.4.3
         with:
-          name: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-src.zip
-          path: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-src.zip
+          name: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-src.zip
+          path: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-src.zip
       
       - name: Upload Release Candidate Asset - Source code - zip format
         uses: actions/upload-release-asset@v1.0.2
@@ -268,8 +268,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release_candidate.outputs.upload_url }}
-          asset_path: ./apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-src.zip
-          asset_name: apache-manifoldcf-${{ steps.artifactVersion.outputs.version }}-src.zip
+          asset_path: ./apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-src.zip
+          asset_name: apache-manifoldcf-${{ steps.releaseVersion.outputs.version }}-src.zip
           asset_content_type: application/zip
       
       - name: Set up QEMU
