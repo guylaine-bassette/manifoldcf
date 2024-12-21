@@ -25,7 +25,7 @@ on:
         type: choice
         description: Select the ManifoldCF release
         options:
-        - 2.28-jDK-11
+        - 2.28-JDK-11
         - 2.27-JDK-11
         - 2.26-JDK-11 #Java 11
         - 2.25-JDK-8
