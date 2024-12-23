@@ -30,7 +30,7 @@
 
     <import file="${mcf-dist}/connector-build.xml"/>
 
-    <property name="kafka.version" value="3.6.0"/>
+    <property name="kafka.version" value="3.6.2"/>
 
     <path id="connector-classpath">
         <path refid="mcf-connector-build.connector-classpath"/>
